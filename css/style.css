@@ -1,0 +1,89 @@
+:root{
+    --mycolor01:#EAC9C0;
+    --mycolor02:#DAB2D3;
+    --mycolor03:#9EDAE3;
+    --mycolor04:#65C4D8;
+    --mycolor05:#ebeba7;
+    --mywhite:#f8f8f4;
+
+    
+    
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+    min-height: 100vh;
+    background:#222;
+}
+.container{
+    position: relative;
+    width: 500px;
+    height: 500px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+}
+
+.container .icon{
+    position: relative;
+    left: -50%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;  /*cursor改變滑鼠游標的形狀 */
+}
+
+.container .icon .imgBox{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    transition: 0.5s;
+    border: 1px solid #fff;
+    transform: rotate(calc(360deg/10 * var(--i)));
+    transform-origin: 280px;
+    z-index: 100;
+    overflow: hidden;
+}
+
+.container .icon .active{
+   box-shadow:  0 0 0 0.5px #222,
+   0 0 0 20px #ff1d50;
+}
+
+
+
+
+.container .icon .imgBox img {
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    transform: rotate(calc(-360deg/10 * var(--i)));
+    transition: 0.5s;
+    filter: grayscale(1);
+    
+}
+
+.container .icon .imgBox .active img{
+    filter: grayscale(0);
+
+}
+
+.content{
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+}
